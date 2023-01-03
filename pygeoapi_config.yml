@@ -1,0 +1,41 @@
+server:
+  bind:
+      host: 0.0.0.0
+      port: 5000
+  url: http://localhost:5000/
+  mimetype: application/json; charset=UTF-8
+  encoding: utf-8
+  language: en-US
+  gzip: false
+  cors: true
+  pretty_print: true
+  limit: 10
+
+logging:
+    level: DEBUG
+
+metadata:
+    identification:
+        title: OpenCDMS API
+        description: OpenCDMS API implementation with pygeoapi
+        keywords:
+            - data
+            - api
+        keywords_type: theme
+        terms_of_service: https://www.apache.org/licenses/LICENSE-2.0
+        url: https://github.com/opencdms-processes/opencdms-backup
+    license:
+        name: APACHE LICENSE, VERSION 2.0
+        url: https://www.apache.org/licenses/LICENSE-2.0
+    provider:
+        name: OpenCDMS
+        url: https://opencdms.org
+    contact:
+        name: Admin, OpenCDMS
+        position: Admin
+        address: England
+        country: England
+        email: info@opencdms.org
+
+resources:
+
