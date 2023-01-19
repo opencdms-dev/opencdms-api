@@ -1,11 +1,9 @@
-import os
 from flask_cors import CORS
-from pygeoapi.flask_app import BLUEPRINT as pygeoapi_blueprint
+from opencdms_api.pygeoapi.app import BLUEPRINT as pygeoapi_blueprint
 from opencdms_api.app import get_app
 from flask_admin import Admin
 from opencdms_api.admin import views as admin_views
 from opencdms_api.db import db
-import sqlalchemy
 
 
 app = get_app()

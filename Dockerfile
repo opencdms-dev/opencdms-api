@@ -11,4 +11,6 @@ COPY requirements-dev.txt .
 
 RUN pip install -r requirements-dev.txt
 
+COPY pygeoapi_config.yml .
+
 COPY entrypoint.sh .

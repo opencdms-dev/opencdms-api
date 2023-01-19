@@ -104,7 +104,8 @@ class Observations(db.Model):
     )
     phenomenon_start = Column(
         DateTime,
-        comment="Start time of the phenomenon being observed or observing period, if missing assumed instantaneous with time given by phenomenon_end",
+        comment="Start time of the phenomenon being observed or observing period, "
+        "if missing assumed instantaneous with time given by phenomenon_end",
     )
     phenomenon_end = Column(
         DateTime,
