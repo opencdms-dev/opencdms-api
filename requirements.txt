@@ -1,0 +1,9 @@
+flask~=2.2.2
+flask-sqlalchemy
+flask-admin
+flask-cors
+sqlalchemy~=1.4.46
+pygeoapi~=0.13.0
+geoalchemy2~=0.12.5
+psycopg2
+pygeofilter~=0.2.0

@@ -1,0 +1,73 @@
+server:
+  bind:
+    host: 0.0.0.0
+    port: 5000
+  url: http://localhost:5000/oapi/
+  mimetype: application/json; charset=UTF-8
+  encoding: utf-8
+  language: en-US
+  gzip: false
+  cors: true
+  pretty_print: true
+  limit: 10
+  templates:
+    path: opencdms_api/pygeoapi/templates
+  map:
+    url: https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
+    attribution: '<a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia maps</a> | Map data &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+
+logging:
+  level: DEBUG
+
+metadata:
+  identification:
+    title: OpenCDMS API
+    description: OpenCDMS API implementation with pygeoapi
+    keywords:
+      - data
+      - api
+    keywords_type: theme
+    terms_of_service: https://www.apache.org/licenses/LICENSE-2.0
+    url: https://github.com/opencdms-processes/opencdms-backup
+  license:
+    name: APACHE LICENSE, VERSION 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+  provider:
+    name: OpenCDMS
+    url: https://opencdms.org
+  contact:
+    name: Admin, OpenCDMS
+    position: Admin
+    address: England
+    country: England
+    email: info@opencdms.org
+
+resources:
+  observation_types:
+    type: collection
+    visibility: default
+    title: Observation types
+    description: My cool observation types
+    keywords:
+      - observations
+      - monitoring
+    links: # list of 1..n related links
+      - type: text/csv  # MIME type
+        rel: canonical  # link relations per https://www.iana.org/assignments/link-relations/link-relations.xhtml
+        title: data  # title
+        href: https://github.com/mapserver/mapserver/blob/branch-7-0/msautotest/wxs/data/obs.csv  # URL
+        hreflang: en-US  # language
+    providers:
+      - type: feature
+        name: opencdms_cdm.pygeoapi.non_spatial_provider.PostgreSQLNonSpatialProvider
+        editable: false
+        data:
+          host: db
+          port: 5432
+          dbname: postgres
+          user: postgres
+          password: password
+          search_path: [ public ]
+          spatial: false
+        id_field: id
+        table: observation_type
